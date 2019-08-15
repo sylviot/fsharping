@@ -3,7 +3,9 @@
 module PrimitiveType = 
     let sampleInteger = 1
     let sampleDouble = 3.14
-    let sampleRange = [0..99]
+    let sampleArrayRange = [| 0 .. 99 |]
+    let sampleArray = [| 1; 2; |]
+    let sampleListRange = [0..99]
     let sampleList = [1; 2; 3]
     let sampleHere = [for i in 0..99 -> (i, i*i)]
 
@@ -24,6 +26,11 @@ module Tuples =
     let tuple = (1, 2, 3)
     let swap (a, b) = (b, a)
     let sampleStructTuple = struct(1, 2)
+
+module Sequences =
+    let sampleSeqEmpty = Seq.empty
+    let sampleSeqLazy = seq{ yield "a"; yield "b"; yield "c"; }
+    let sampleSeqRange = seq{1..99}
 
 //module Pipeline = 
 //    let numbers = [0..100]

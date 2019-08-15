@@ -42,6 +42,9 @@ module Recursive =
         | y::ys -> y + fnSumList ys
 
 module RecordTypes =
+    [<Struct>]
+    type ContactCardStruct = { Name: string; Phone: string; Verified: bool }
+
     type ContactCard = { Name: string; Phone: string; Verified: bool }
     let contact1 = { Name = "Anna"; Phone = "000"; Verified = true }
     let contact2 = { Name = "Betto"; Phone = "999"; Verified = false }

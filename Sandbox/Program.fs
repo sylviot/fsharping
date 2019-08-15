@@ -32,6 +32,15 @@ module Sequences =
     let sampleSeqLazy = seq{ yield "a"; yield "b"; yield "c"; }
     let sampleSeqRange = seq{1..99}
 
+module Recursive =
+    let rec factorial n =
+        if n = 0 then 1 else n * factorial (n - 1)
+
+    let rec fnSumList xs =
+        match xs with
+        | [] -> 0
+        | y::ys -> y + fnSumList ys
+
 //module Pipeline = 
 //    let numbers = [0..100]
 //        |> List.filter (fn n -> n % 2 == 0)

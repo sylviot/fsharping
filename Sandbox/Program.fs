@@ -41,6 +41,18 @@ module Recursive =
         | [] -> 0
         | y::ys -> y + fnSumList ys
 
+module RecordTypes =
+    type ContactCard = { Name: string; Phone: string; Verified: bool }
+    let contact1 = { Name = "Anna"; Phone = "000"; Verified = true }
+    let contact2 = { Name = "Betto"; Phone = "999"; Verified = false }
+    let contact1Fix = { contact1 with Phone = "111"; Verified = false }
+
+    let showContactCard (c: ContactCard) =
+        "Name: " + c.Name + " Phone: " + c.Phone + (if not c.Verified then " (unverified) " else " (Verified) ") + c.Phone
+
+    printfn "Contact Anna: %s" (showContactCard contact1)
+
+
 //module Pipeline = 
 //    let numbers = [0..100]
 //        |> List.filter (fn n -> n % 2 == 0)

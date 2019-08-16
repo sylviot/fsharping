@@ -52,24 +52,26 @@ module RecordTypes =
 
     let showContactCard (c: ContactCard) =
         "Name: " + c.Name + " Phone: " + c.Phone + (if not c.Verified then " (unverified) " else " (Verified) ") + c.Phone
-
     printfn "Contact Anna: %s" (showContactCard contact1)
 
+module DiscriminatedUnion =
+    type Address = Address of string
+    type Name = Name of string
+    type SSN = SSN of int
 
-//module Pipeline = 
-//    let numbers = [0..100]
-//        |> List.filter (fn n -> n % 2 == 0)
+    let sampleAddress = Address "Rua xxx"
+    let sampleName = Name "Name"
+    let sampleSSN = SSN 1234567890
 
-let sayName name = 
-    sprintf "Hello %s" name
+    let unwrapAddress (Address address) = address
+    let unwrapName (Name name) = name
+    let unwrapSSN (SSN ssn) = ssn
+    let main =
+        printfn "Name: %s, Address: %s %d" (sampleName |> unwrapName) (sampleAddress |> unwrapAddress) (sampleSSN |> unwrapSSN)
 
 
+// MAIN //
 [<EntryPoint>]
 let main argv =
-    let names = ["Anna"; "Betto"; "Carlos"]
-    names
-    |> List.map sayName
-    |> List.iter (fun name -> printfn "%s - %s" name name)
-    let sampleHere = [for i in 0..99 -> (i, i*i)]
-    printfn "asdas %A" sampleHere
+    DiscriminatedUnion.main
     0

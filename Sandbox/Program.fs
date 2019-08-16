@@ -59,6 +59,12 @@ module DiscriminatedUnion =
     type Name = Name of string
     type SSN = SSN of int
 
+    [<Struct>]
+    type Shape =
+        | Circle of radius: float
+        | Square of side: float
+        | Triangle of height: float * width: float
+
     let sampleAddress = Address "Rua xxx"
     let sampleName = Name "Name"
     let sampleSSN = SSN 1234567890
@@ -66,8 +72,17 @@ module DiscriminatedUnion =
     let unwrapAddress (Address address) = address
     let unwrapName (Name name) = name
     let unwrapSSN (SSN ssn) = ssn
+
+    let sampleCircle = Shape.Circle 3.0
+    let sampleTriangle = Shape.Triangle(3., 4.)
+
+    let unwrapShapeCircle (Circle r) = r
+    let unwrapShapeTriangle (Triangle(h, w)) = (h*w)
+
     let main =
         printfn "Name: %s, Address: %s %d" (sampleName |> unwrapName) (sampleAddress |> unwrapAddress) (sampleSSN |> unwrapSSN)
+        printfn "Circle: %.2f" (sampleCircle |> unwrapShapeCircle)
+        printfn "Triangle: %.2f" (sampleTriangle |> unwrapShapeTriangle)
 
 
 // MAIN //

@@ -126,13 +126,21 @@ module OptionValues =
         |> Option.bind calculator.GetState
         |> Option.map calculator.GetShippingZone
 
+module UnitsOfMeasure =
+    open Microsoft.FSharp.Data.UnitSystems.SI.UnitNames
+
+    let distance = 1000.0<meter>
+
+    [<Measure>]
+    type mile =
+        static member asMeter = 1609.34<meter/mile>
+
+    let main =
+        printfn "Distance %.2f meter or %.4f miles" distance (distance / mile.asMeter)
+
 
 
 // MAIN //
 [<EntryPoint>]
 let main argv =
-    DiscriminatedUnion.main
-    let fibSeq = Seq.unfold (fun (a,b) -> Some(a+b, (b, a+b))) (0,1)
-    fibSeq
-    |> Seq.iter (fun x -> printfn "%d" x)
     0

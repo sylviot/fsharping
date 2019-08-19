@@ -114,6 +114,18 @@ module PatternMatching =
 //        printParseResult "1"
 //        printParseResult "1.5"
 
+module OptionValues =
+    type ZipCode = ZipCode of string
+    type Customer = {ZipCode: ZipCode option}
+    type IShippingCalculator =
+        abstract GetState: ZipCode -> string option
+        abstract GetShippingZone: string -> int
+
+    let CustomerShippingZone (calculator: IShippingCalculator, customer: Customer) =
+        customer.ZipCode
+        |> Option.bind calculator.GetState
+        |> Option.map calculator.GetShippingZone
+
 
 
 // MAIN //

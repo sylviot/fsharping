@@ -102,6 +102,17 @@ module PatternMatching =
             | Manager(person, reports) -> reports |> List.sumBy countReports
             | Executive(person, reports, assistant) -> (reports |> List.sumBy countReports) + countReports(assistant)
 
+//module ActivePatterns =
+//    let (|Int|_|) = parseInt
+//    let (|Double|_|) = parseDouble
+
+//    let printParseResult = function
+//        | Int x -> printfn "%d" x
+//        | _ -> printfn "Type not found!"
+
+//    let main =
+//        printParseResult "1"
+//        printParseResult "1.5"
 
 
 

@@ -84,9 +84,32 @@ module DiscriminatedUnion =
         printfn "Circle: %.2f" (sampleCircle |> unwrapShapeCircle)
         printfn "Triangle: %.2f" (sampleTriangle |> unwrapShapeTriangle)
 
+module PatternMatching =
+    type Person = {
+        First: string
+        Last: string
+    }
+
+    type Employee =
+        | Engineer of engineer: Person
+        | Manager of manager: Person * reports: List<Employee>
+        | Executive of executive: Person * reports: List<Employee> * assistant: Employee
+
+    // Function to count the employees in tree below the employee input
+    let rec countReports(employee: Employee) = 
+        1 + match employee with
+            | Engineer(person) -> 0
+            | Manager(person, reports) -> reports |> List.sumBy countReports
+            | Executive(person, reports, assistant) -> (reports |> List.sumBy countReports) + countReports(assistant)
+
+
+
 
 // MAIN //
 [<EntryPoint>]
 let main argv =
     DiscriminatedUnion.main
+    let fibSeq = Seq.unfold (fun (a,b) -> Some(a+b, (b, a+b))) (0,1)
+    fibSeq
+    |> Seq.iter (fun x -> printfn "%d" x)
     0

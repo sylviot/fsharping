@@ -138,6 +138,20 @@ module UnitsOfMeasure =
     let main =
         printfn "Distance %.2f meter or %.4f miles" distance (distance / mile.asMeter)
 
+module SampleClasses =
+    type Vector2D(dx: double, dy: double) =
+        let length = sqrt(dx*dx + dy*dy)
+
+        member this.DX = dx
+        member this.DY = dy
+        member this.Length = length
+        member this.Scale(k) = Vector2D(k * this.DX, k * this.DY)
+
+    let sampleVector = Vector2D(3.0, 4.0)
+    let sampleVectorScale = sampleVector.Scale(10.0)
+
+    let main =
+        printf "Length vector: %.2f and scaled by 10: %.2f" sampleVector.Length sampleVectorScale.Length
 
 
 // MAIN //

@@ -151,7 +151,24 @@ module SampleClasses =
     let sampleVectorScale = sampleVector.Scale(10.0)
 
     let main =
-        printf "Length vector: %.2f and scaled by 10: %.2f" sampleVector.Length sampleVectorScale.Length
+        printfn "Length vector: %.2f and scaled by 10: %.2f" sampleVector.Length sampleVectorScale.Length
+
+module SampleGenericClasses =
+    type StateTracker<'T>(initialElement: 'T) =
+        let mutable states = [ initialElement ]
+
+        member this.UpdateState newState =
+            states <- newState :: states
+
+        member this.History = states
+        member this.Current = states.Head
+
+    let tracker = StateTracker(10)
+
+    let main =
+        printfn "Initial state: %d" tracker.Current
+        tracker.UpdateState(17)
+        printfn "Current state: %d" tracker.Current
 
 
 // MAIN //

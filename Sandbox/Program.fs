@@ -1,4 +1,5 @@
 ﻿open System
+open System.IO
 
 module PrimitiveType = 
     let sampleInteger = 1
@@ -170,6 +171,20 @@ module SampleGenericClasses =
         tracker.UpdateState(17)
         printfn "Current state: %d" tracker.Current
 
+module SampleInterfaces =
+    open System
+    open System.IO
+
+    type ReadFile() =
+        let file = new StreamReader("readme.txt")
+        member this.ReadLine() = file.ReadLine()
+        interface IDisposable with
+            member this.Dispose() = file.Close()
+
+    let interfaceImplementation = {
+        new IDisposable with
+            member this.Dispose() = printfn("Disposed")
+    }
 
 // MAIN //
 [<EntryPoint>]

@@ -189,4 +189,11 @@ module SampleInterfaces =
 // MAIN //
 [<EntryPoint>]
 let main argv =
+    printfn("=========== Chapter ===========")
+    Chapter2.run
+    printfn("=========== Chapter ===========")
+    printfn "Sum of inverse: %.2f" (Chapter3.fnSumOfInverse 5.0)
+    printfn("=========== Chapter ===========")
+    printfn "%A" (Chapter4.quicksort [1; 5; 3; 7; 2; 6; 8; 9; 4])
+    printfn("=========== Chapter ===========")
     0

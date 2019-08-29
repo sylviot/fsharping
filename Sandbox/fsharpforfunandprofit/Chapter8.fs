@@ -1,5 +1,5 @@
 ﻿(* Type inference *)
-module Chapter7
+module Chapter8
     let Where source predicate =
         Seq.filter predicate source
 

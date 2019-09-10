@@ -33,5 +33,3 @@ module Chapter19
     let list3 = list2.Tail
 
     System.Object.ReferenceEquals(list1, list3)
-
-

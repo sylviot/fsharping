@@ -6,6 +6,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="fsharpforfunandprofit\Chapter23.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter22.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter21.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter20.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter19.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter17.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter16.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter15.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter14.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter12.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter11.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter10.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter9.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter8.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter6.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter5.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter4.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter3.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter2.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

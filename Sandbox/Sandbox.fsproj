@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="fsharpforfunandprofit\Chapter23.fs" />
+    <Compile Include="fsharpforfunandprofit\Chapter24.fs" />
     <Compile Include="fsharpforfunandprofit\Chapter22.fs" />
     <Compile Include="fsharpforfunandprofit\Chapter21.fs" />
     <Compile Include="fsharpforfunandprofit\Chapter20.fs" />

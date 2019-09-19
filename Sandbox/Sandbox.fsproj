@@ -6,11 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="fsharpforfunandprofit\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="whyusefsharp\Chapter29.fs" />
+    <Compile Include="whyusefsharp\Chapter28.fs" />
+    <Compile Include="whyusefsharp\Chapter26.fs" />
+    <Compile Include="whyusefsharp\Chapter25.fs" />
     <Compile Include="whyusefsharp\Chapter24.fs" />
     <Compile Include="whyusefsharp\Chapter22.fs" />
     <Compile Include="whyusefsharp\Chapter21.fs" />
@@ -30,6 +29,7 @@
     <Compile Include="whyusefsharp\Chapter4.fs" />
     <Compile Include="whyusefsharp\Chapter3.fs" />
     <Compile Include="whyusefsharp\Chapter2.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
 </Project>

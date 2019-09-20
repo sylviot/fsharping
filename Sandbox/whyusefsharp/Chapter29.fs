@@ -126,7 +126,8 @@
     let color1 = Color.Red
     let color2:Color = enum 2
 
-    let color3 = System.Enum.Parse(typeof<Color>, "Green") :?> Color (* ':?>' is a downcast *)
+    (* ':?>' is a downcast *)
+    let color3 = System.Enum.Parse(typeof<Color>, "Green") :?> Color
 
     [<System.FlagsAttribute>]
     type FileAccess = | Read = 1 | Write = 2 | Execute = 4
